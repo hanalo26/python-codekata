@@ -3,8 +3,8 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120847
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 01. 20. 09:26:18
+# 작성일: 2026. 01. 20. 09:26:30
 
 def solution(numbers):
-    numbers.sort()
+    numbers.sort() # 오름차순 정렬
     return numbers[-1] * numbers[-2]
