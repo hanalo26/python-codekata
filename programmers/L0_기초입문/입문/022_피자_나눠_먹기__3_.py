@@ -3,10 +3,10 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120816
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 01. 21. 09:32:22
+# 작성일: 2026. 01. 21. 09:33:07
 
 from math import ceil
 
 def solution(slice, n):
-    answer = ceil(n//slice)
+    answer = ceil(n/slice)
     return answer
