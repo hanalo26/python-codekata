@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120849
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 01. 23. 09:24:36
+# 작성일: 2026. 01. 23. 09:24:51
 
 def solution(my_string):
     answer = ''
