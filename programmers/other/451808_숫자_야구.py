@@ -2,7 +2,7 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/451808
 # 작성자: 백하은
-# 작성일: 2026. 01. 16. 02:06:44
+# 작성일: 2026. 01. 24. 14:18:53
 
 def solution(n, submit):
     from random import sample
