@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120837
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 01. 29. 09:32:30
+# 작성일: 2026. 01. 29. 09:32:41
 
 def solution(hp):
     # 출전한 장군개미의 수
