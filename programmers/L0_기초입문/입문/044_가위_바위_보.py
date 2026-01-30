@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120839
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 01. 30. 09:21:24
+# 작성일: 2026. 01. 30. 09:21:39
 
 def solution(rsp):
     answer = ''
