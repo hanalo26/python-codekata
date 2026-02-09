@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120899
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 02. 09. 09:42:48
+# 작성일: 2026. 02. 09. 09:43:51
 
 def solution(array):
     max_value = array[0]
