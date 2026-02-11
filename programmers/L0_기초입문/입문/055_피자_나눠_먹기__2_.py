@@ -3,9 +3,9 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120815
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 02. 11. 09:47:46
+# 작성일: 2026. 02. 11. 09:48:16
 
-
+# n의 최소공배수 활용
 def solution(n):
     pizza = 1
     
