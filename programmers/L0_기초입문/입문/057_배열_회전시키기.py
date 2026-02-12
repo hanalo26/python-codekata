@@ -3,10 +3,13 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120844
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 02. 12. 09:27:22
+# 작성일: 2026. 02. 12. 09:28:23
 
 def solution(numbers, direction):
     if direction == "right":
         return [numbers[-1]]+numbers[:-1]
     elif direction == "left":
         return numbers[1:]+[numbers[0]]
+    
+    
+    # 특정 요소를 리스트로 감싸고, 리스트끼리 합침
