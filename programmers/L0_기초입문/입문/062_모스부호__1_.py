@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120838
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 02. 25. 12:30:48
+# 작성일: 2026. 02. 25. 12:31:25
 
 def solution(letter):
     # 모스부호 해석표
