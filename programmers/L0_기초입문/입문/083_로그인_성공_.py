@@ -3,13 +3,13 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120883
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 04. 30. 10:13:47
+# 작성일: 2026. 04. 30. 10:14:28
 
 def solution(id_pw, db):
-    user_id, user_pw = id_pw
+    user_id, user_pw = id_pw # 유저가 입력한 값
     
-    for db_id, db_pw in db:
-        if user_id == db_id:
+    for db_id, db_pw in db: # DB에 저장된 값
+        if user_id == db_id: 
             if user_pw == db_pw:
                 return 'login'
             else:
