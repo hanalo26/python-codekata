@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120878
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 05. 22. 13:52:42
+# 작성일: 2026. 05. 22. 13:53:23
 
 import math
 
@@ -20,5 +20,6 @@ def solution(a, b):
         
     while b % 5 == 0:
         b = b // 5
-        
+    
+    # 분모에 1만 남아있을때, 유한소수가 됨
     return 1 if b == 1 else 2
