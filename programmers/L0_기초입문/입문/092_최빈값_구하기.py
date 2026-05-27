@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120812
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 05. 27. 19:52:24
+# 작성일: 2026. 05. 27. 19:53:04
 
 def solution(array):
     # 0~999까지의 숫자가 등장할 때마다 해당 위치의 원소가 +1
@@ -19,4 +19,5 @@ def solution(array):
     if counts.count(max_cnt) > 1:
         return -1
     else:
+        # max_cnt의 인덱스(=인덱스가 곧 최빈값) 반환
         return counts.index(max_cnt)
