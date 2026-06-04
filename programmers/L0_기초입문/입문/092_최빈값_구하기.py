@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/120812
 # 알고리즘: 기초
 # 작성자: 백하은
-# 작성일: 2026. 05. 29. 21:13:53
+# 작성일: 2026. 06. 04. 21:40:51
 
 def solution(array):
     # 0~999까지의 숫자가 등장할 때마다 해당 위치의 원소가 +1
