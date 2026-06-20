@@ -3,11 +3,11 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/181928
 # 알고리즘: 조건문
 # 작성자: 백하은
-# 작성일: 2026. 06. 20. 13:17:29
+# 작성일: 2026. 06. 20. 13:17:53
 
 def solution(num_list):
-    answer_1 = "" #짝수
-    answer_2 = "" #홀수
+    answer_1 = "" #짝수만 이어붙인 수
+    answer_2 = "" #홀수만 이어붙인 수
     
     for i in num_list:
         if i % 2 == 0:
