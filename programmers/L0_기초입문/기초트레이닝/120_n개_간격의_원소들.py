@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/181888
 # 알고리즘: 리스트(배열)
 # 작성자: 백하은
-# 작성일: 2026. 06. 21. 19:31:52
+# 작성일: 2026. 06. 21. 19:32:47
 
 def solution(num_list, n):
     # 파이썬의 슬라이싱 문법 
