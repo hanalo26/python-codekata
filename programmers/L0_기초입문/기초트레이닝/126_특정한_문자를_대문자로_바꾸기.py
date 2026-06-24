@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/181873
 # 알고리즘: 문자열
 # 작성자: 백하은
-# 작성일: 2026. 06. 24. 21:30:38
+# 작성일: 2026. 06. 24. 21:30:54
 
 def solution(my_string, alp):
     answer = my_string.replace(alp, alp.upper())
