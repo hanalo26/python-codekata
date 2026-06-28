@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/181854
 # 알고리즘: 함수(메서드)
 # 작성자: 백하은
-# 작성일: 2026. 06. 28. 18:47:13
+# 작성일: 2026. 06. 28. 18:47:34
 
 def solution(arr, n):
     arr_length = len(arr)
@@ -12,6 +12,8 @@ def solution(arr, n):
     if arr_length % 2 == 0:
         for i in range(1,arr_length,2):
             arr[i] = arr[i] + n
+    
+    # 배열의 길이가 홀수 -> 짝수 인덱스에 존재하는 숫자에 +n
     else:
         for i in range(0,arr_length,2):
             arr[i] = arr[i] + n
