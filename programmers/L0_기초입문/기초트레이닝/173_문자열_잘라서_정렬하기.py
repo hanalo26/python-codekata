@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/181866
 # 알고리즘: 문자열
 # 작성자: 백하은
-# 작성일: 2026. 07. 06. 14:42:36
+# 작성일: 2026. 07. 06. 14:47:45
 
 def solution(myString):
     
