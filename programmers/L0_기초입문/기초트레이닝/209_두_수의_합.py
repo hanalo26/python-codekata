@@ -3,11 +3,11 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/181846
 # 알고리즘: 함수(메서드)
 # 작성자: 백하은
-# 작성일: 2026. 07. 12. 16:27:47
+# 작성일: 2026. 07. 12. 16:28:12
 
 import sys
 
-# 정수 변환 자릿수 제한을 100,000자리 이상(예: 200,000)으로 늘림
+# 정수 변환 자릿수 제한을 100,000자리 이상 늘림
 sys.set_int_max_str_digits(200000)
 
 def solution(a, b):
