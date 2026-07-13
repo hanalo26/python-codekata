@@ -3,14 +3,16 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/181943
 # 알고리즘: 연산
 # 작성자: 백하은
-# 작성일: 2026. 07. 13. 11:45:48
+# 작성일: 2026. 07. 13. 11:46:26
 
 def solution(my_string, overwrite_string, s):
+    # 덮어 써지지 않는 부분(앞)
     front = my_string[:s]
     
     # 덮어 써지지 않는 글자의 인덱스
     end_idx = s + len(overwrite_string)
     
+    # 덮어 써지지 않는 부분(뒤)
     back = my_string[end_idx:]
     
     
