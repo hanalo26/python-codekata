@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/81301
 # 알고리즘: 문자열, 해시
 # 작성자: 백하은
-# 작성일: 2026. 07. 15. 12:56:43
+# 작성일: 2026. 07. 15. 12:57:17
 
 def solution(s):
     dict_game = {
@@ -20,6 +20,7 @@ def solution(s):
     }
     
     for key, value in dict_game.items():
+		    # key와 일치하는 것들은 value로 치환
         s = s.replace(key, value)
         
     return int(s)
