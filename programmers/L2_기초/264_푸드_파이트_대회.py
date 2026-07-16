@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/134240
 # 알고리즘: 문자열
 # 작성자: 백하은
-# 작성일: 2026. 07. 16. 12:22:34
+# 작성일: 2026. 07. 16. 12:23:04
 
 def solution(food):
     left = ""
@@ -13,4 +13,5 @@ def solution(food):
         cnt = food[i] // 2
         left += str(i)*cnt
     
+    # 오른쪽 선수는 왼쪽 선수의 reverse된 버전의 순서대로 먹게 됨
     return left + "0" + left[::-1]
