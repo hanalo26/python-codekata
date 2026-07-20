@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/77484
 # 알고리즘: 해시
 # 작성자: 백하은
-# 작성일: 2026. 07. 20. 16:31:14
+# 작성일: 2026. 07. 20. 16:32:42
 
 def solution(lottos, win_nums):
     correct_cnt = 0
@@ -20,8 +20,9 @@ def solution(lottos, win_nums):
     def get_ranks(corrects):
         rn = 7 - corrects
         
-        if rn < 6:
+        if corrects >= 2:
             return rn
         else:
             return 6
+        
     return [get_ranks(max_correct), get_ranks(min_correct)]
