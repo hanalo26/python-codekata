@@ -2,7 +2,7 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/468379
 # 작성자: 백하은
-# 작성일: 2026. 07. 21. 18:35:28
+# 작성일: 2026. 07. 21. 18:44:36
 
 def solution(m, n, h, w, drops):
     # 비가 오지 않는 칸은 inf, 즉 무한대로 둠 (기본값으로 작용하도록 설정)
@@ -23,7 +23,6 @@ def solution(m, n, h, w, drops):
                 p_sum[r+1][c+1] = val + p_sum[r][c+1] + p_sum[r+1][c] - p_sum[r][c]
                 
         # h x w 직사각형 내부의 합이 0인 구역(안전지대) 탐색
-        best_r, best_c = -1, -1
         for r in range(h,m+1):
             for c in range(w,n+1):
                 # (r-h, c-w) ~ (r-1, c-1) 영역의 비 내린 칸 수
@@ -40,8 +39,8 @@ def solution(m, n, h, w, drops):
     # 3. 이분 탐색 수행 (버틸 수 있는 최대 시간 K 찾기)
     low = 0
     high = len(drops) - 1
-    max_safe_time = -1
-    answer = [0,0] # 기본값: 첫 비부터 맞아야 할 때 (0, 0)
+    max_safe_time = -1 # True가 한 번도 나오지 않는다면 비를 맞지 않고 1초도 버틸 수 없음을 의미
+    answer = [0,0] # 기본값: 첫 비부터 맞아야 할 때는 (0, 0)를 출력하거나 가장 위/왼쪽 위치를 우선한다는 예외 처리 규정이 있어서
     
     while low <= high:
         mid = (low + high) // 2
