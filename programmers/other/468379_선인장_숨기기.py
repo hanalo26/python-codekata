@@ -2,7 +2,7 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/468379
 # 작성자: 백하은
-# 작성일: 2026. 07. 21. 18:21:30
+# 작성일: 2026. 07. 21. 18:35:28
 
 def solution(m, n, h, w, drops):
     # 비가 오지 않는 칸은 inf, 즉 무한대로 둠 (기본값으로 작용하도록 설정)
@@ -41,7 +41,7 @@ def solution(m, n, h, w, drops):
     low = 0
     high = len(drops) - 1
     max_safe_time = -1
-    answer = [0,0] # 기본값: 첫 번째 비부터 맞아야 할 때 (0, 0)
+    answer = [0,0] # 기본값: 첫 비부터 맞아야 할 때 (0, 0)
     
     while low <= high:
         mid = (low + high) // 2
