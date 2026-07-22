@@ -2,43 +2,44 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/1844
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 16:10:20
+# 작성일: 2026. 07. 22. 18:06:42
 
-# BFS(너비 우선 탐색) 방식에 활용되는 내장 라이브러리
 from collections import deque
 
 def solution(maps):
-    # 행의 개수(n)
+    # 행의 개수
     n = len(maps) # x
     
-    # 열의 개수(m)
+    # 열의 개수
     m = len(maps[0]) # y
     
-    # 이동 패턴 (dx, dy의 같은 인덱스끼리 묶으면 상하좌우 이동 가능)
-    dx = [-1, 1, 0, 0]
-    dy = [0, 0, -1, 1]
+    # 이동방향 (상하좌우)
+    dx = [-1,1,0,0]
+    dy = [0,0,-1,1]
     
-    # 초기값 정의 (0, 0)
+    # 시작점 (0,0)
     que = deque([(0,0)])
     
+    # 상대팀 진영에 도달하기 위한 최소 이동거리 계산
     while que:
-        # 맨 앞에 있는 요소를 꺼냄
+        # 맨 앞에 있는 요소 꺼냄
         x,y = que.popleft()
         
-        # 상대 팀 진영에 도달한 경우
-        if x == n-1 and y == m-1:
-            return maps[x][y] # 이동거리가 반환됨
+        # 상대팀 진영에 도착했는지 확인
+        if (x == n-1) and (y == m-1):
+            return maps[x][y]
         
-        # 탐색
+        # 상하좌우로 이동했을 때 이동한 위치의 좌표값
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
             
-            # map 내부에 있고, 벽이 아닌 경우
-            if 0 <= nx < n and 0 <= ny < m and maps[nx][ny] == 1:
-                # 이동거리를 저장
+            # 이동한 좌표가 map 내에 있고, 벽(=0)이 아닌지 확인
+            if (0 <= nx < n) and (0 <= ny < m) and maps[nx][ny] == 1:
+                # maps[nx][ny]에 이동거리 저장
                 maps[nx][ny] = maps[x][y] + 1
+                # (nx,ny)를 que에 저장 (다음에 이동거리를 또 계산해야 함)
                 que.append((nx,ny))
-                
-    # 상대팀 진영에 도착할 수 없는 경우
+            
+    # 끝까지 상대편 진영에 도착하지 못한 경우
     return -1
