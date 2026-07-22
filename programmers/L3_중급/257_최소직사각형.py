@@ -3,21 +3,20 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/86491
 # 알고리즘: 완전탐색, 그리디
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 14:12:53
+# 작성일: 2026. 07. 22. 23:37:07
 
 def solution(sizes):
-    max_w = 0
-    max_h = 0
+    # 지갑의 가로,세로 길이
+    max_w = 0 # 가로
+    max_h = 0 # 세로
     
     for w,h in sizes:
-        # w,h 중에서 더 짧은 쪽을 h_side, 더 긴 쪽을 w_side로 정의
+        # 명함을 돌려서 넣는 것도 가능하므로
         w_side = max(w,h)
         h_side = min(w,h)
         
-        # max_w, max_h와 비교해서 더 큰 값을 max_w, max_h로 저장
+        # 지값의 크기 갱신
         max_w = max(max_w, w_side)
         max_h = max(max_h, h_side)
-    
-    answer = max_w * max_h
-    
-    return answer
+        
+    return max_w * max_h
