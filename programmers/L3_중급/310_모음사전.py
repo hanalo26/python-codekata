@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/84512
 # 알고리즘: 완전탐색
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 00:54:14
+# 작성일: 2026. 07. 23. 00:58:41
 
 def solution(word):
     # 알파벳 모음
@@ -33,7 +33,7 @@ def solution(word):
     make_words("")
     
     # 사전 내에서 몇 번째 단어인지 찾기
-    answer = words.index(word) + 1
+    answer = words.index(word)
     
     # 답
     return answer
