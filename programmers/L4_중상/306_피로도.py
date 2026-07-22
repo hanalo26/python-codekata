@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/87946
 # 알고리즘: 완전탐색, 백트래킹
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 17:42:44
+# 작성일: 2026. 07. 22. 17:43:24
 
 def solution(k, dungeons):
     # 탐험할 수 있는 던전의 수 
