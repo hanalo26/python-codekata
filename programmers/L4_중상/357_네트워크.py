@@ -3,13 +3,13 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/43162
 # 알고리즘: DFS/BFS
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 16:41:59
+# 작성일: 2026. 07. 22. 16:42:27
 
 from collections import deque
 
 def solution(n, computers):
     # 초기값
-    # 모든 컴퓨터가 네트워크에 연결되어 있지 않은 상황
+    # 컴퓨터별 확인 현황
     coms = [False] * n
     
     # 네트워크의 개수
