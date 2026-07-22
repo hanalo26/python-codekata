@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/86971
 # 알고리즘: DFS/BFS, 그래프
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 00:26:20
+# 작성일: 2026. 07. 23. 00:36:02
 
 from collections import deque
 
@@ -40,7 +40,7 @@ def cnt_nodes(s,n,mapd,cut_a, cut_b):
                 visited[nxt] = True
                 que.append(nxt)
                 cnt += 1
-                
+    # 탐색 결과            
     return cnt
 
 # main - 지도를 그리면서 각 전력망 별로 연결된 송전망 개수의 차이 반환
