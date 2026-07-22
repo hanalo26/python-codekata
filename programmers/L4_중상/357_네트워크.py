@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/43162
 # 알고리즘: DFS/BFS
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 16:43:03
+# 작성일: 2026. 07. 22. 16:43:45
 
 from collections import deque
 
@@ -23,14 +23,14 @@ def solution(n, computers):
             que = deque([idx])
             coms[idx] = True
         
-        # 이 컴퓨터와 연결된 모든 컴퓨터 확인
-        while que:
-            com = que.popleft()
-            
-            for next_com in range(n):
-                # 연결된 컴퓨터이지만 아직 확인하지 않은 경우 
-                if computers[com][next_com] == 1 and not coms[next_com]:
-                    coms[next_com] = True
-                    que.append(next_com)
+            # 이 컴퓨터와 연결된 모든 컴퓨터 확인
+            while que:
+                com = que.popleft()
+
+                for next_com in range(n):
+                    # 연결된 컴퓨터이지만 아직 확인하지 않은 경우 
+                    if computers[com][next_com] == 1 and not coms[next_com]:
+                        coms[next_com] = True
+                        que.append(next_com)
                     
     return answer
