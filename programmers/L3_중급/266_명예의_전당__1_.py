@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/138477
 # 알고리즘: 정렬, 힙
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 14:40:32
+# 작성일: 2026. 07. 22. 14:55:51
 
 def solution(k, score):
     # 매일 명예의 전당 내 최소 점수 기록
