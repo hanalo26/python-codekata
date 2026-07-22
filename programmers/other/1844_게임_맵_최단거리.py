@@ -2,17 +2,17 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/1844
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 16:01:51
+# 작성일: 2026. 07. 22. 16:10:20
 
 # BFS(너비 우선 탐색) 방식에 활용되는 내장 라이브러리
 from collections import deque
 
 def solution(maps):
     # 행의 개수(n)
-    n = len(maps)
+    n = len(maps) # x
     
     # 열의 개수(m)
-    m = len(maps[0])
+    m = len(maps[0]) # y
     
     # 이동 패턴 (dx, dy의 같은 인덱스끼리 묶으면 상하좌우 이동 가능)
     dx = [-1, 1, 0, 0]
