@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/159994
 # 알고리즘: 스택/큐
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 15:12:22
+# 작성일: 2026. 07. 22. 15:15:33
 
 def solution(cards1, cards2, goal):
     # cards1의 인덱스
