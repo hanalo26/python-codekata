@@ -2,13 +2,14 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/43105
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 19:47:49
+# 작성일: 2026. 07. 23. 19:48:41
 
 def solution(triangle):
     # 꼭대기에 있는 값은 높이가 1인 삼각형의 최댓값
     h = len(triangle)
     
     # i: 삼각형의 높이
+    # i=0이면 음수 인덱스가 생겨 맨 마지막 줄을 더하게 되므로 반드시 1부터 시작해야 함
     for i in range(1,h):
         
         n = len(triangle[i])
