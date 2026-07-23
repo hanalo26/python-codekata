@@ -2,7 +2,7 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/42576
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 20:03:31
+# 작성일: 2026. 07. 23. 20:06:08
 
 from collections import Counter
 
@@ -14,5 +14,6 @@ def solution(participant, completion):
     # {'이름'; 등장횟수}
     answer = p - c
     
-    # answer에는 등장횟수가 1 이상인 명단만 나옴
-    return "".join(list(answer)[0])
+    # answer에는 등장횟수가 1 이상인 이름이 나옴
+    # 만약에 하나 이상의 요소를 꺼내야 한다면
+    return list(answer)[0]
