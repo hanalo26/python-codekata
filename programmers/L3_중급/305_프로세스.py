@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/42587
 # 알고리즘: 스택/큐
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 23:09:30
+# 작성일: 2026. 07. 23. 23:10:11
 
 from collections import deque
 
@@ -27,4 +27,4 @@ def solution(priorities, location):
             if n_idx == location:
                 return len(played)
             
-    return -1
+    return -1 # 절대 반환되면 안되는 기본 반환값
