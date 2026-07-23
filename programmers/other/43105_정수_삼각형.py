@@ -2,29 +2,31 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/43105
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 19:35:03
+# 작성일: 2026. 07. 23. 19:47:49
 
 def solution(triangle):
-    # 높이가 1이면 꼭대기의 값 = 최대값 (인덱스로는 0)
+    # 꼭대기에 있는 값은 높이가 1인 삼각형의 최댓값
     h = len(triangle)
     
-    for i in range(1,h): # i: 해당 숫자 배열이 위치한 높이 
+    # i: 삼각형의 높이
+    for i in range(1,h):
         
         n = len(triangle[i])
         
-        for j in range(n): # j: 숫자 배열 내에서 특정 숫자의 위치
+        # j: 특정 높이 내에 있는 숫자들의 인덱스
+        for j in range(n):
             
-            # triangle[i][j]가 가장 왼쪽에 있는 숫자일 때 (j=0)
-            if j == 0:
-                triangle[i][j] = triangle[i][j] + triangle[i-1][0]
+            # j가 0번 인덱스일때, 직전 행 가장 앞에 있는 원소를 더함
+            if j == 0: 
+                triangle[i][j] += triangle[i-1][0]
             
-            # triangle[i][j]가 가장 오른쪽에 있는 숫자일때 (j=n-1)
+            # j가 n-1번 인덱스일때, 직전 행 제일 마지막에 있는 원소를 더함
             elif j == n-1:
-                triangle[i][j] = triangle[i][j] + triangle[i-1][-1]
+                triangle[i][j] += triangle[i-1][-1]
             
-            # triangle[i][j]가 가운데에 있는 숫자일때
+            # j가 1 ~ n-2번 사이 인덱스일떄
             else:
-                triangle[i][j] = triangle[i][j] + max(triangle[i-1][j], triangle[i-1][j-1])
+                triangle[i][j] += max(triangle[i-1][j-1], triangle[i-1][j])
                 
-    # 마지막 줄에서 가장 큰 값을 반환 = 구하고자 하는 값            
+    # 정답
     return max(triangle[-1])
