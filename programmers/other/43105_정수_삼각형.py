@@ -2,7 +2,7 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/43105
 # 작성자: 백하은
-# 작성일: 2026. 07. 24. 01:36:04
+# 작성일: 2026. 07. 24. 01:36:22
 
 def solution(triangle):
     
@@ -22,5 +22,5 @@ def solution(triangle):
             else:
                 triangle[i][j] = triangle[i][j] + max(triangle[i-1][j-1], triangle[i-1][j])
     
-    # 코드 작성후, 반환해야 하는 값으로 변경할 것
+    # 최종 답
     return max(triangle[-1])
