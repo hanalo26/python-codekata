@@ -3,20 +3,25 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/42748
 # 알고리즘: 정렬
 # 작성자: 백하은
-# 작성일: 2026. 07. 16. 12:12:08
+# 작성일: 2026. 07. 23. 23:38:18
 
 def solution(array, commands):
     answer = []
     
-    for command in commands:
-        i = command[0]
-        j = command[1]
-        k = command[2]
+    # [[i,j,k]]의 형태로 commands에 저장됨
+    # i, j: array에서 잘라서 가져올 부분과 관련된 변수
+    # k: 부분 리스트에서 k번째에 있는 수를 answer에 담아서 반환
+    
+    for c in commands:
+        i = c[0]
+        j = c[1]
+        k = c[2]
         
-        sliced_list = array[i-1:j]
+        # 인덱스는 0부터 이므로 뜯어와야 하는 부분의 인덱스는 (i-1) ~ (j-1)
+        part = array[i-1:j]
         
-        sorted_list = sorted(sliced_list)
+        sorted_part = sorted(part)
         
-        answer.append(sorted_list[k-1])
+        answer.append(sorted_part[k-1])
     
     return answer
