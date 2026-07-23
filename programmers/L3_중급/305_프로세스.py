@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/42587
 # 알고리즘: 스택/큐
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 23:10:11
+# 작성일: 2026. 07. 23. 23:14:22
 
 from collections import deque
 
