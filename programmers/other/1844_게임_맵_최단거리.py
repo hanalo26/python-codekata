@@ -2,44 +2,39 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/1844
 # 작성자: 백하은
-# 작성일: 2026. 07. 22. 18:06:42
+# 작성일: 2026. 07. 24. 14:14:15
 
 from collections import deque
 
 def solution(maps):
-    # 행의 개수
-    n = len(maps) # x
-    
-    # 열의 개수
-    m = len(maps[0]) # y
-    
-    # 이동방향 (상하좌우)
-    dx = [-1,1,0,0]
-    dy = [0,0,-1,1]
+    # 맵의 크기
+    n = len(maps) # 행
+    m = len(maps[0]) # 열
     
     # 시작점 (0,0)
-    que = deque([(0,0)])
+    q = deque([(0,0)])
     
-    # 상대팀 진영에 도달하기 위한 최소 이동거리 계산
-    while que:
-        # 맨 앞에 있는 요소 꺼냄
-        x,y = que.popleft()
+    # 방향키 (상하좌우)
+    dr = [-1,1,0,0]
+    dc = [0,0,-1,1]
+    
+    # 탐색
+    while q:
+        r,c = q.popleft()
         
-        # 상대팀 진영에 도착했는지 확인
-        if (x == n-1) and (y == m-1):
-            return maps[x][y]
+        # 도착지에 도달했는지 확인
+        if r == n-1 and c == m-1:
+            return maps[r][c]
         
-        # 상하좌우로 이동했을 때 이동한 위치의 좌표값
+        # 도착하지 못한 경우
         for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
+            nr = r + dr[i]
+            nc = c + dc[i]
             
-            # 이동한 좌표가 map 내에 있고, 벽(=0)이 아닌지 확인
-            if (0 <= nx < n) and (0 <= ny < m) and maps[nx][ny] == 1:
-                # maps[nx][ny]에 이동거리 저장
-                maps[nx][ny] = maps[x][y] + 1
-                # (nx,ny)를 que에 저장 (다음에 이동거리를 또 계산해야 함)
-                que.append((nx,ny))
-            
-    # 끝까지 상대편 진영에 도착하지 못한 경우
+            # map 내에 있고, 벽에 부딪히진 않았는지 확인
+            if 0 <= nr < n and 0 <= nc < m and maps[nr][nc] == 1:
+                maps[nr][nc] = maps[r][c] + 1
+                q.append((nr,nc))
+                
+    # 끝까지 도달하지 못한 경우
     return -1
