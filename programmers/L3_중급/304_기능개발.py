@@ -3,43 +3,40 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/42586
 # 알고리즘: 스택/큐
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 22:33:48
+# 작성일: 2026. 07. 25. 19:17:36
 
-# progresses에서 앞에 있는 작업 진도가 100이 되어야 뒤에 있는 작업도 배포 가능
-# 각 작업은 하루에 speeds에 담긴 만큼만 진행된다.
-# 소요 일수는 올림으로 계산해야 한다.
-
-# 소요 일수를 계산해서 리스트에 담아두어야겠다.
-# - 뒤에 있는 요소가 바로 앞에 있는 요소보다 크면 그 작업은 같이 배포할 수 없으므로 다음 배포일의 기준이 됨
 import math
 
 def solution(progresses, speeds):
-    # 1. 작업별 작업 시간 계산
+    # 1. 기능별 작업 완료 시간 계산
     times = []
     
     for p, s in zip(progresses, speeds):
-        t = math.ceil((100-p)/s)
+        time = math.ceil((100-p)/s)
         
-        times.append(t)
+        times.append(time)
     
-    # 2. 가장 앞에 있는 작업 시간을 기준으로 그거보다 크면 그 앞에서 잘라서 한 번에 배포하고, 다음 배포 기준은 잘린 원소가 된다.
-    answer = []
-    
+    # 2. 기능 배포 기준, 한 번에 배포되는 기능의 개수
     standard = times[0]
     
     num_of_progress = 1
     
-    for j in times[1:]:
-        if j <= standard:
+    answer = []
+    
+    # 3. 현재 작업진행도에다가 하루 작업속도를 적용해 작업이 완료되는 일수 계산
+    # -> 앞에 있는 작업이 완료되어야 뒤에 있는 작업 배포 가능
+    # -> 뒤에 있는 작업이 배포 기준이 되는 작업보다 늦게 완료되면 따로 배포해야 함
+    for t in times[1:]:
+        if t <= standard:
             num_of_progress += 1
         
         else:
             answer.append(num_of_progress)
-            standard = j
-            num_of_progress = 1 # 동시에 배포되는 작업 수 초기화
+            standard = t
+            num_of_progress = 1
             
-    
-    # 3. 마지막 블록은 기준보다 큰 요소가 등장하지 않았으므로 수동으로 append함
+    # 마지막으로 배포되는 것은 answer에 추가하지 않음
     answer.append(num_of_progress)
     
+    # 최종 답
     return answer
