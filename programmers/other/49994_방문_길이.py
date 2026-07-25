@@ -2,7 +2,7 @@
 # 프로그래머스 (unknown)
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/49994
 # 작성자: 백하은
-# 작성일: 2026. 07. 25. 20:03:02
+# 작성일: 2026. 07. 25. 20:04:12
 
 # 갔다가 되돌아 오는 건 +1로 카운트 (a->b, b->a인 경우)
 # 이미 다녀온 점에서 다녀온 점으로 이동하는 것은 이동은 하되, 카운트하지 X
@@ -24,7 +24,6 @@ def solution(dirs):
     
     # 시작점
     x, y = (0,0)
-    visit.add((0,0))
     
     # 캐릭터 이동 시작
     for d in dirs:
