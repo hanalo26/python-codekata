@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/42586
 # 알고리즘: 스택/큐
 # 작성자: 백하은
-# 작성일: 2026. 07. 25. 19:17:36
+# 작성일: 2026. 07. 25. 19:17:52
 
 import math
 
@@ -35,7 +35,7 @@ def solution(progresses, speeds):
             standard = t
             num_of_progress = 1
             
-    # 마지막으로 배포되는 것은 answer에 추가하지 않음
+    # 마지막으로 배포되는 것은 answer에 추가하지 않음(실수-> 추가하는 것으로 수정 완료)
     answer.append(num_of_progress)
     
     # 최종 답
