@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/161989
 # 알고리즘: 그리디
 # 작성자: 백하은
-# 작성일: 2026. 07. 28. 19:29:50
+# 작성일: 2026. 07. 28. 19:30:09
 
 def solution(n, m, section):
     """
