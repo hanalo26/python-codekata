@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/12953
 # 알고리즘: 수학
 # 작성자: 백하은
-# 작성일: 2026. 08. 04. 14:14:10
+# 작성일: 2026. 08. 04. 14:14:27
 
 # 최소공배수를 구하는 메서드
 from math import gcd
