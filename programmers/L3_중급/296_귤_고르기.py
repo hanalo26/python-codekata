@@ -3,14 +3,14 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/138476
 # 알고리즘: 해시, 그리디
 # 작성자: 백하은
-# 작성일: 2026. 08. 05. 12:54:30
+# 작성일: 2026. 08. 05. 12:55:38
 
 from collections import Counter
 
 def solution(k, tangerine):
     answer = 0
     
-    # 가장 큰 귤부터 상자에 담으면서 가장 큰 귤을 다 담으면 k개에서 차감하고, 그 다음으로 크 귤을 채워넣는 방식으로 진행
+    # 가장 개수가 많은 귤부터 상자에 담으면서 가장 큰 귤을 다 담으면 k개에서 차감하고, 그 다음으로 개수가 많은 귤을 채워넣는 방식으로 진행
     counts = Counter(tangerine) # {귤의 크기:개수}
     
     sorted_counts = sorted(counts.values(),reverse=True)
