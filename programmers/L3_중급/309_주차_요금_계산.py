@@ -3,74 +3,77 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/92341
 # 알고리즘: 해시, 시뮬레이션
 # 작성자: 백하은
-# 작성일: 2026. 07. 25. 21:34:18
+# 작성일: 2026. 08. 16. 19:28:28
 
-# fees: 주차요금 [기본 시간(분), 기본 요금(원), 단위 시간(분), 단위 요금(원)]
-## 주차 요금은 분 단위로 진행 -> 00:00를 기준으로 n분 지난 시간이 입/출차 시간인지 변환 필요
-# records: 자동차의 입/출차 내역 ["시각 차량번호 내역(IN/OUT)"]
-## IN/OUT으로 입/출차 구분
-## 23:59까지 출차 기록이 없다면, 해당 차량은 23:59에 출차한 것으로 계산
-# 주차요금이 담긴 리스트 출력 (최종 답) - 단, 정렬 기준은 차량번호
+"""
+<문제 조건 정리>
+(1) 변수
+fees = [기본요금(분), 기본 요금(원), 단위 시간(분), 단위 요금(원)]
 
-# 문제를 구하기 위해 필요한 것
-## 입차 ~ 출차까지 누적 주차시간, 00:00를 기준으로 N분이 지난 시간인지 계산, 청구할 요금 계산, 누적주차시간과 요금은 차량번호와 반드시 연결해서 사용
+records = ["입차 또는 출차 시각(시:분) 차량번호 내역(IN/OUT)"]
+ㄱ. 23:59까지 출차기록이 없다면 요금은 23:59에 출차한 것을 기준으로 계산한다.
 
-# ======================================
+(2) 차량번호가 작은 차량부터 순서대로 청구할 주차요금이 담긴 리스트 반환
+
+(3) 구해야 하는 것
+ㄱ. HH:MM을 모두 분단위로 변환 -> 입차~출차까지 누적 주차시간(분)
+ㄴ. 주차요금
+"""
 import math
 
-# HH:MM을 00:00을 기준으로 몇 분 지난건지, 분으로 환산하는 함수
-def hour_to_min(time_str):
-    hour, mins = map(int, time_str.split(":"))
+# HH:MM -> 00:00를 기준으로 분으로 변환
+def h_to_m(time_str):
+    h, m = map(int, time_str.split(':'))
     
-    answer = hour * 60 + mins
+    t = h * 60 + m
     
-    return answer
+    return t
 
-# 메인
+# 주차요금 계산
 def solution(fees, records):
-    answer = [] # 누적 요금만 담아서 출력
+    answer = []
     
-    # fees 분리
+    # 요금표 내 원소들을 각각 변수에 할당
     basic_time, basic_fee, over_time, over_fee = fees
     
-    # records 분해 -> 시각, 차량번호 입/출차 내역이 나올 예정
+    # records 요소 분해
+    parking = {} # 주차되어 있는 차량 {차량번호:입차시간}
+    total_t = {} # 출차된 차량의 주차시간 {차량번호:주차시간}
     
-    ## 현재 주차 되어 있는 차량 목록 {차량번호:입차시간}
-    parkings = {}
-    
-    ## 출차한 차량의 주차 요금 {차량번호:누적 시간}
-    total_time = {}
-    
-    for record in records:
-        time, car_num, in_out = record.split()
+    for r in records:
+        time, car_num, in_out = r.split()
         
-        t = hour_to_min(time)
+        t = h_to_m(time)
         
-        # 입차라면 -> parkings에 담기 // 출차라면 -> 시간을 분으로 환산해서 누적 주차시간 계산
+        # 입차일 때
         if in_out == "IN":
-            parkings[car_num] = t
+            parking[car_num] = t
+        # 출차일 때
         else:
-            durations = t - parkings[car_num]
-            total_time[car_num] = total_time.get(car_num,0) + durations
-            del parkings[car_num]
+            durations = t - parking[car_num]
+            # 같은 번호의 차량이 두 번 입차했을 경우를 대비
+            # 예제 케이스에서 0000 차량이 실제로 2번 입차함
+            total_t[car_num] = total_t.get(car_num, 0) + durations
+            del parking[car_num] # 출차하였으므로 주차 목록에서 삭제
+            
+    # 23:59까지 출차기록이 없다면?
+    for n, t in parking.items():
+        durations = h_to_m("23:59") - parking[n]
+        total_t[n] = total_t.get(n, 0) + durations
+
+    # 차량번호가 작은 순서대로 정렬
+    sorted_CarNums = sorted(total_t.keys())
         
-    # 주차된 차량 목록에 차량이 남아있다면 -> 주차시간은 23:59 기준으로 계산
-    for n, t in parkings.items():
-        duration = hour_to_min("23:59") - parkings[n]
-        total_time[n] = total_time.get(n,0) + duration
+    # 주차 요금 계산
+    for n in sorted_CarNums:
+        sum_time = total_t[n] # 차량번호만 정렬된 리스트에서 차량번호를 꺼낸 뒤, 요금 계산에 활용
         
-        
-    # total_time를 키인 차량 번호 순서대로 정렬하고, 주차 요금 계산
-    CAR_NUM_sorted = sorted(total_time.keys())
-    
-    for n in CAR_NUM_sorted:
-        sum_time = total_time[n]
-        
-        # 기본 시간 이하일 때 -> 기본요금 // 기본 시간 초과 추가요금 계산
+        # 요금 계산 시작!!!!
         if sum_time <= basic_time:
             answer.append(basic_fee)
         else:
-            fee = basic_fee + math.ceil((sum_time-basic_time)/over_time)*over_fee
-            answer.append(fee)
-            
+            # 기본요금+추가요금
+            m = basic_fee + math.ceil((sum_time-basic_time)/over_time)*over_fee
+            answer.append(m)
+    
     return answer
