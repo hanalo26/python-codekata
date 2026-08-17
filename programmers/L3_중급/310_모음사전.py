@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/84512
 # 알고리즘: 완전탐색
 # 작성자: 백하은
-# 작성일: 2026. 08. 17. 16:37:42
+# 작성일: 2026. 08. 17. 16:40:30
 
 def solution(word):
     # 알파벳 모음
@@ -24,7 +24,7 @@ def solution(word):
         if len(cur_word) == 5:
             return
         
-        # 두 조건문을 활용해 모든 모음을 사용해 단어를 만드는 반복문 삽입
+        # 두 조건문을 활용해 모든 모음을 사용해 단어를 만드는 반복문 삽입(내부 함수에 포함된 부분)
         for w in base:
             make_word(cur_word+w)
     
