@@ -3,37 +3,34 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/84512
 # 알고리즘: 완전탐색
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 01:02:44
+# 작성일: 2026. 08. 17. 16:37:42
 
 def solution(word):
     # 알파벳 모음
     base = ['A', 'E', 'I', 'O', 'U']
     
-    # 단어 사전
-    words = []
+    # 단어사전 제작
+    dict_alpha = []
     
-    # 모음을 하나씩 이어붙이면서 단어 사전을 만드는 함수
-    def make_words(current_word):        
-        # 입력된 단어가 빈 문자열인가?
-        # - 빈 문자열이 아니라면 단어 사전에 추가함
-        if current_word != "":
-            words.append(current_word)
-            
+    # 단어사전을 만드는 함수
+    def make_word(cur_word):
+        # 빈 문자열이 입력되었는가?
+        ## 빈문자열이 아니라면 사전에 추가
+        if cur_word != "":
+            dict_alpha.append(cur_word)
+        
         # 입력된 단어의 길이가 5 이하인가?
-        # 5글자가 되면 직전인 4글자짜리로 돌아가도록 함
-        if len(current_word) == 5:
+        ## 5글자가 입력되면 사전에 기록한 뒤, 마지막 글자 삭제
+        if len(cur_word) == 5:
             return
         
-        # 모든 단어 조합 생성
+        # 두 조건문을 활용해 모든 모음을 사용해 단어를 만드는 반복문 삽입
         for w in base:
-            # 두 조건문을 활용해 단어 사전에 계속 추가
-            make_words(current_word + w)
-        
-    # 내부 함수 사용, 시작은 빈 문자열
-    make_words("")
+            make_word(cur_word+w)
     
-    # 사전 내에서 몇 번째 단어인지 찾기
-    answer = words.index(word) + 1
+    # 내부 함수 사용
+    make_word("")
     
-    # 답
+    answer = dict_alpha.index(word) + 1
+    
     return answer
