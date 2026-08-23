@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/43165
 # 알고리즘: DFS, 완전탐색
 # 작성자: 백하은
-# 작성일: 2026. 08. 24. 00:10:30
+# 작성일: 2026. 08. 24. 00:11:12
 
 from collections import deque
 
@@ -22,7 +22,7 @@ def solution(numbers, target):
                 answer += 1
                 
         else:
-                q.append((total_sum+numbers[used_num_cnt], used_num_cnt+1))
-                q.append((total_sum-numbers[used_num_cnt], used_num_cnt+1))
+            q.append((total_sum+numbers[used_num_cnt], used_num_cnt+1))
+            q.append((total_sum-numbers[used_num_cnt], used_num_cnt+1))
     
     return answer
