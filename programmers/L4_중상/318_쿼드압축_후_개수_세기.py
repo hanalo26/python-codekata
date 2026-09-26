@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/68936
 # 알고리즘: 분할정복
 # 작성자: 백하은
-# 작성일: 2026. 09. 26. 16:10:43
+# 작성일: 2026. 09. 26. 16:11:40
 
 def solution(arr):
     answer = [0, 0] # [0의 개수, 1의 개수]
@@ -24,7 +24,7 @@ def solution(arr):
                     compress(x, y + half, half) # 2사분면 위치
                     compress(x + half, y, half) # 3사분면 위치
                     compress(x + half, y + half, half) # 4사분면 위치
-                    return
+                    return # 영역을 쪼갠 뒤에 현재 함수는 종료하고 분리한 영역별로 각각 함수 실행
                 
         # 영역 전체가 동일한 값이면 압축 성공 -> 해당 값의 카운트 +1
         answer[first_val] += 1
