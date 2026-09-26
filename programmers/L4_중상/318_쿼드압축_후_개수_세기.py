@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/68936
 # 알고리즘: 분할정복
 # 작성자: 백하은
-# 작성일: 2026. 09. 26. 16:11:40
+# 작성일: 2026. 09. 26. 16:12:49
 
 def solution(arr):
     answer = [0, 0] # [0의 개수, 1의 개수]
