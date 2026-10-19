@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/178870
 # 알고리즘: 투포인터
 # 작성자: 백하은
-# 작성일: 2026. 10. 19. 18:40:18
+# 작성일: 2026. 10. 19. 18:43:23
 
 """
 1. (left, right)를 모두 사용한 이유
@@ -27,7 +27,7 @@ def solution(sequence, k):
     # 정답을 저장할 변수
     # - 초기에는 전체 sequence의 길이로 지정
     best_left = 0
-    best_right = len(sequence)
+    best_right = len(sequence)-1
     
     # right를 수열의 끝까지 이동시키면서 확인
     while right < len(sequence):
