@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/118667
 # 알고리즘: 큐, 투포인터
 # 작성자: 백하은
-# 작성일: 2026. 10. 20. 16:34:47
+# 작성일: 2026. 10. 20. 16:35:24
 
 from collections import deque
 
@@ -36,7 +36,6 @@ def solution(queue1, queue2):
         
         if sum_q1==target:
             return cnt
-        
         
         elif sum_q1>target:
             value = q1.popleft()
