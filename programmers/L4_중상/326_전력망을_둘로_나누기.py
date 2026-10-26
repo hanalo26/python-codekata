@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/86971
 # 알고리즘: DFS/BFS, 그래프
 # 작성자: 백하은
-# 작성일: 2026. 07. 23. 00:36:02
+# 작성일: 2026. 10. 26. 19:00:27
 
 from collections import deque
 
@@ -11,23 +11,21 @@ from collections import deque
 # s: 송전탑의 번호(시작점)
 # mapd : 각각의 송전탑이 연결된 송전탑을 표시한 지도
 # cut_a,b : 전선 연결이 끊어진 두 송전탑의 번호 
-def cnt_nodes(s,n,mapd,cut_a, cut_b):
-    # 확인한 송전탑인지 표시하는 표
-    visited = [False] * (n+1)
+def cnt_nodes(s,n,mapd, cut_a, cut_b):
+    visited = [False]*(n+1)
     
-    # 시작점
-    visited[s] = True
+    visited[s] = True # 시작점
     
     # 어느 한 전력망에 연결된 송전탑의 개수
     cnt = 1
     
     # 다음에 탐색할 송전탑
-    que = deque([s])
+    q = deque([s])
     
     # 탐색
-    while que:
+    while q:
         # 현재 서있는 송전탑(기준)
-        cur = que.popleft()
+        cur = q.popleft()
         
         # 기준과 연결된 송전탑
         for nxt in mapd[cur]:
@@ -38,12 +36,13 @@ def cnt_nodes(s,n,mapd,cut_a, cut_b):
             # 위 조건을 통과하고, 카운트하지 않은 송전탑이라면
             if not visited[nxt]:
                 visited[nxt] = True
-                que.append(nxt)
+                q.append(nxt)
                 cnt += 1
-    # 탐색 결과            
+                
     return cnt
+    
 
-# main - 지도를 그리면서 각 전력망 별로 연결된 송전망 개수의 차이 반환
+# 메인 - 지도를 그리면서 각 전력망 별로 연결된 송전망 개수의 차이 반환
 def solution(n, wires):
     # mapd 정의
     mapd = [[] for _ in range(n+1)]
@@ -52,8 +51,9 @@ def solution(n, wires):
     for v1, v2 in wires:
         mapd[v1].append(v2)
         mapd[v2].append(v1)
-        
+    
     # 두 전력망에 연결된 송전탑의 개수 차이
+    # 초기에는 전체 송전탑 개수로 설정 - 전부 연결되어 있지 않은 상황을 가정
     answer = n
     
     # wires에 있는 전선을 순차적으로 cutting
@@ -70,5 +70,4 @@ def solution(n, wires):
         # answer 갱신
         answer = min(answer, diff)
         
-    # 최종
     return answer
