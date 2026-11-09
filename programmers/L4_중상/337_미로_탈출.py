@@ -3,7 +3,7 @@
 # 문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/159993
 # 알고리즘: BFS
 # 작성자: 백하은
-# 작성일: 2026. 11. 09. 16:30:34
+# 작성일: 2026. 11. 09. 16:32:25
 
 """
 (1) 미로의 구성 요소
@@ -37,7 +37,7 @@ def solution(maps):
             elif maps[r][c] == 'E':
                 end = (r, c)
 
-    # BFS를 이용해 from_pos에서 to_pos까지의 최단 거리를 구하는 함수
+    # BFS를 이용해 from_pos에서 target_point까지의 최단 거리를 구하는 함수
     def bfs(from_pos, target_point):
         visited = [[False] * C for _ in range(R)]
         q = deque([(from_pos[0], from_pos[1], 0)]) # (r, c, 거리)
